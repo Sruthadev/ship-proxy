@@ -76,7 +76,7 @@ public class ShipProxy {
 
     public static void sendFramed(OutputStream offshoreOut, byte[] requestBytes) throws IOException {
         DataOutputStream dos = new DataOutputStream(offshoreOut);
-        dos.write(requestBytes.length);
+        dos.writeInt(requestBytes.length);
         dos.write(requestBytes);
         dos.flush();
     }
