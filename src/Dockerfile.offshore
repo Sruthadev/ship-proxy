@@ -1,0 +1,11 @@
+FROM openjdk:17-jdk-alpine
+
+COPY OffshoreProxy.java /app/
+
+WORKDIR /app
+
+RUN javac OffshoreProxy.java
+
+EXPOSE 9090
+
+CMD ["java", "OffshoreProxy"]
